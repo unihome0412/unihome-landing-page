@@ -687,6 +687,138 @@
         scroll-behavior: auto !important;
       }
     }
+
+    /* ===== Aviso de privacidad (discreto) ===== */
+    .legal-bar {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 5;
+      display: flex;
+      justify-content: center;
+      padding: 6px clamp(14px, 4vw, 56px) 10px;
+      pointer-events: none;
+    }
+
+    .legal-bar a {
+      pointer-events: auto;
+      color: rgba(78, 90, 107, .55);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: .02em;
+      text-decoration: none;
+      border-bottom: 1px dotted rgba(78, 90, 107, .35);
+      padding-bottom: 1px;
+      transition: color .2s ease, border-color .2s ease;
+    }
+
+    .legal-bar a:hover,
+    .legal-bar a:focus-visible {
+      color: var(--coral-deep);
+      border-bottom-color: var(--coral-deep);
+    }
+
+    .legal-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: clamp(14px, 3vw, 32px);
+      background: rgba(15, 23, 42, .55);
+      -webkit-backdrop-filter: blur(6px);
+      backdrop-filter: blur(6px);
+    }
+
+    .legal-modal.is-open {
+      display: flex;
+      animation: fadeIn .2s ease both;
+    }
+
+    .legal-card {
+      position: relative;
+      width: 100%;
+      max-width: 640px;
+      max-height: min(86vh, 780px);
+      overflow-y: auto;
+      padding: clamp(22px, 3vw, 34px) clamp(20px, 3vw, 34px);
+      border-radius: 20px;
+      background: var(--card);
+      color: var(--ink);
+      box-shadow: 0 30px 80px rgba(15, 23, 42, .35);
+      font-size: .92rem;
+      line-height: 1.65;
+    }
+
+    .legal-card h2 {
+      margin: 0 0 6px;
+      font-size: clamp(1.25rem, 2.4vw, 1.5rem);
+      letter-spacing: -.02em;
+    }
+
+    .legal-card h3 {
+      margin: 20px 0 6px;
+      font-size: 1rem;
+      letter-spacing: -.01em;
+    }
+
+    .legal-card p {
+      margin: 0 0 10px;
+      color: var(--slate);
+    }
+
+    .legal-card ul {
+      margin: 0 0 10px;
+      padding-left: 20px;
+      color: var(--slate);
+    }
+
+    .legal-card li {
+      margin-bottom: 4px;
+    }
+
+    .legal-card a {
+      color: var(--coral-deep);
+    }
+
+    .legal-close {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      display: grid;
+      place-items: center;
+      width: 36px;
+      height: 36px;
+      border: 0;
+      border-radius: 50%;
+      background: rgba(15, 23, 42, .06);
+      color: var(--ink);
+      cursor: pointer;
+      font-size: 18px;
+      line-height: 1;
+      transition: background-color .2s ease, transform .2s ease;
+    }
+
+    .legal-close:hover {
+      background: rgba(217, 84, 74, .14);
+      transform: rotate(90deg);
+    }
+
+    body.legal-open {
+      overflow: hidden;
+    }
+
+    @media (max-height: 640px) and (orientation: portrait) {
+      .legal-bar {
+        padding-bottom: 6px;
+      }
+
+      .legal-bar a {
+        font-size: 10px;
+      }
+    }
   </style>
 </head>
 
@@ -765,6 +897,54 @@
         <p class="note">Gratis · Disponible para Android</p>
       </div>
     </main>
+
+    <!-- Enlace discreto al aviso de privacidad -->
+    <div class="legal-bar">
+      <a href="#" id="openPrivacy">Aviso de privacidad</a>
+    </div>
+  </div><!-- /.page -->
+
+  <!-- Modal del aviso de privacidad -->
+  <div class="legal-modal" id="privacyModal" role="dialog" aria-modal="true" aria-labelledby="privacyTitle"
+    aria-hidden="true">
+    <div class="legal-card" role="document">
+      <button class="legal-close" type="button" aria-label="Cerrar aviso de privacidad" id="closePrivacy">✕</button>
+
+      <h2 id="privacyTitle">Aviso de privacidad</h2>
+      <p><strong>UniHome</strong> (en adelante, "UniHome") con domicilio en México, es responsable del tratamiento de
+        sus datos personales conforme a la Ley Federal de Protección de Datos Personales en Posesión de los
+        Particulares (LFPDPPP).</p>
+
+      <h3>1. Datos que recabamos</h3>
+      <ul>
+        <li>Datos de identificación (nombre, correo electrónico).</li>
+        <li>Datos de contacto y preferencias de búsqueda de alojamiento.</li>
+        <li>Datos técnicos de navegación (IP, dispositivo, páginas visitadas).</li>
+      </ul>
+
+      <h3>2. Finalidades del tratamiento</h3>
+      <ul>
+        <li>Brindar el servicio de búsqueda y contacto de alojamiento estudiantil.</li>
+        <li>Enviar información relacionada con el servicio.</li>
+        <li>Analítica y mejora del sitio mediante herramientas como Google Analytics / Tag Manager.</li>
+      </ul>
+
+      <h3>3. Transferencia de datos</h3>
+      <p>Sus datos no serán transferidos a terceros sin su consentimiento, salvo las excepciones previstas en el
+        artículo 37 de la LFPDPPP.</p>
+
+      <h3>4. Derechos ARCO</h3>
+      <p>Usted puede ejercer sus derechos de Acceso, Rectificación, Cancelación y Oposición enviando un correo a
+        <a href="mailto:unihome0412@gmail.com">unihome0412@gmail.com</a>.</p>
+
+      <h3>5. Cookies y tecnologías de rastreo</h3>
+      <p>Este sitio utiliza cookies y Google Tag Manager para fines analíticos. Puede deshabilitarlas desde la
+        configuración de su navegador.</p>
+
+      <h3>6. Cambios al aviso</h3>
+      <p>Cualquier modificación a este aviso será publicada en esta misma sección. Última actualización:
+        <span id="privacyDate"></span>.</p>
+    </div>
   </div>
 
   <script>
@@ -798,6 +978,52 @@
         });
       });
     });
+
+    // ===== Aviso de privacidad (modal) =====
+    (function () {
+      const modal = document.getElementById("privacyModal");
+      const openBtn = document.getElementById("openPrivacy");
+      const closeBtn = document.getElementById("closePrivacy");
+      const dateEl = document.getElementById("privacyDate");
+      let lastFocused = null;
+
+      if (dateEl) {
+        dateEl.textContent = new Date().toLocaleDateString("es-MX", {
+          year: "numeric", month: "long", day: "numeric"
+        });
+      }
+
+      function openModal(e) {
+        if (e) e.preventDefault();
+        lastFocused = document.activeElement;
+        modal.classList.add("is-open");
+        modal.setAttribute("aria-hidden", "false");
+        document.body.classList.add("legal-open");
+        closeBtn.focus();
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({ event: "privacy_open" });
+      }
+
+      function closeModal() {
+        modal.classList.remove("is-open");
+        modal.setAttribute("aria-hidden", "true");
+        document.body.classList.remove("legal-open");
+        if (lastFocused) lastFocused.focus();
+      }
+
+      openBtn.addEventListener("click", openModal);
+      closeBtn.addEventListener("click", closeModal);
+
+      modal.addEventListener("click", function (e) {
+        if (e.target === modal) closeModal();
+      });
+
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape" && modal.classList.contains("is-open")) {
+          closeModal();
+        }
+      });
+    })();
   </script>
 </body>
 
