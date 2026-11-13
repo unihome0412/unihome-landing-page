@@ -4,22 +4,25 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>UniHome · Lejos de casa, cerca de sentirte en casa</title>
+  <title>UniHome · Lejos de casa, pero con un lugar que te espera</title>
   <meta name="description"
-    content="Encuentra un espacio seguro, cómodo y cerca de tu universidad. Tu próximo hogar está más cerca de lo que imaginas. Descarga UniHome en Google Play.">
+    content="Espacios seguros y cómodos junto a tu universidad, con arrendadores verificados. Tú empaca las cajas; nosotros te ayudamos a saber dónde desempacarlas. Descarga UniHome en Google Play.">
   <meta name="theme-color" content="#FFF9F5">
   <link rel="icon" href="assets/favicon.png">
-  <link rel="preload" as="image" href="assets/Bienvenida%20a%20su%20nuevo%20hogar.jpg">
+  <link rel="preload" as="image" href="assets/collegue_moving.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <!-- Google Tag Manager -->
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-TVZ5B4GS');</script>
+  <script>(function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-TVZ5B4GS');</script>
   <!-- End Google Tag Manager -->
 
   <style>
@@ -348,13 +351,14 @@
       display: none;
     }
 
+    /* La foto llena toda la pantalla; el rostro queda a la derecha, fuera de la zona del texto */
     .visual img {
       width: 100%;
       height: 100%;
       max-width: none;
       max-height: none;
-      object-fit: contain;
-      object-position: right center;
+      object-fit: cover;
+      object-position: 70% 30%;
     }
 
     .scrim {
@@ -688,7 +692,7 @@
       }
     }
 
-    /* ===== Aviso de privacidad (discreto) ===== */
+    /* ===== Barra legal discreta (aviso de privacidad + eliminar cuenta) ===== */
     .legal-bar {
       position: fixed;
       left: 0;
@@ -697,12 +701,18 @@
       z-index: 5;
       display: flex;
       justify-content: center;
+      align-items: center;
+      gap: 8px;
       padding: 6px clamp(14px, 4vw, 56px) 10px;
       pointer-events: none;
     }
 
-    .legal-bar a {
+    .legal-bar a,
+    .legal-bar span {
       pointer-events: auto;
+    }
+
+    .legal-bar a {
       color: rgba(78, 90, 107, .55);
       font-size: 11px;
       font-weight: 500;
@@ -717,6 +727,12 @@
     .legal-bar a:focus-visible {
       color: var(--coral-deep);
       border-bottom-color: var(--coral-deep);
+    }
+
+    .legal-sep {
+      color: rgba(78, 90, 107, .3);
+      font-size: 11px;
+      user-select: none;
     }
 
     .legal-modal {
@@ -824,8 +840,8 @@
 
 <body>
   <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TVZ5B4GS"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TVZ5B4GS" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
 
   <a class="skip" href="#contenido">Saltar al contenido</a>
@@ -862,18 +878,18 @@
     </header>
 
     <figure class="visual">
-      <img src="assets/Bienvenida%20a%20su%20nuevo%20hogar.jpg" width="1536" height="1024"
-        alt="Ilustración de una estudiante con su maleta llegando a su nuevo hogar, donde sus vecinas la saludan desde el balcón de una casa llena de flores, con una universidad al fondo.">
+      <img src="assets/Mudanza-2.png" width="1286" height="720"
+        alt="Un estudiante sonríe mientras carga una caja de mudanza frente a los edificios de su universidad; al fondo, otros jóvenes llevan más cajas.">
     </figure>
     <div class="scrim" aria-hidden="true"></div>
 
     <main class="shell hero-main" id="contenido">
       <div class="content">
         <p class="eyebrow">Cerca del campus. Cerca de ti.</p>
-        <h1>Lejos de casa, <span>cerca de sentirte en casa.</span></h1>
-        <p class="lead">Encuentra un espacio seguro, cómodo y cerca de tu universidad. Tu próximo hogar está más cerca
-          de
-          lo que imaginas.</p>
+        <h1>Llegar lejos duele menos <span>cuando ya tienes dónde llegar.</span></h1>
+        <p class="lead">Con arrendadores verificados, para que comiences esta nueva etapa con mayor tranquilidad. Tu próximo hogar está más cerca
+          de lo que imaginas.
+          </p>
         <div class="actions">
           <a class="btn-playstore" href="#" data-link="googlePlay" aria-label="Descargar UniHome en Google Play">
             <svg class="play-icon" viewBox="0 0 512 512" aria-hidden="true">
@@ -898,8 +914,10 @@
       </div>
     </main>
 
-    <!-- Enlace discreto al aviso de privacidad -->
+    <!-- Barra legal discreta -->
     <div class="legal-bar">
+      <a href="delete-account.html">Eliminar cuenta</a>
+      <span class="legal-sep" aria-hidden="true">·</span>
       <a href="#" id="openPrivacy">Aviso de privacidad</a>
     </div>
   </div><!-- /.page -->
@@ -935,7 +953,8 @@
 
       <h3>4. Derechos ARCO</h3>
       <p>Usted puede ejercer sus derechos de Acceso, Rectificación, Cancelación y Oposición enviando un correo a
-        <a href="mailto:unihome0412@gmail.com">unihome0412@gmail.com</a>.</p>
+        <a href="mailto:unihome0412@gmail.com">unihome0412@gmail.com</a>.
+      </p>
 
       <h3>5. Cookies y tecnologías de rastreo</h3>
       <p>Este sitio utiliza cookies y Google Tag Manager para fines analíticos. Puede deshabilitarlas desde la
@@ -943,7 +962,8 @@
 
       <h3>6. Cambios al aviso</h3>
       <p>Cualquier modificación a este aviso será publicada en esta misma sección. Última actualización:
-        <span id="privacyDate"></span>.</p>
+        <span id="privacyDate"></span>.
+      </p>
     </div>
   </div>
 

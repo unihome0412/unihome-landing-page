@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Eliminar cuenta · UniHome</title>
+  <meta name="description"
+    content="Solicita la eliminación de tu cuenta de UniHome y de los datos asociados. Procedimiento, plazos y datos que se conservan.">
+  <meta name="theme-color" content="#FFF9F5">
+  <link rel="icon" href="assets/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Google Tag Manager -->
+  <script>(function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-TVZ5B4GS');</script>
+  <!-- End Google Tag Manager -->
+
+  <style>
+    :root {
+      --coral: #F07666;
+      --coral-deep: #D9544A;
+      --coral-soft: #FFF0ED;
+      --mint: #70B0A6;
+      --mint-soft: #E5F4F1;
+      --gold: #E9BC56;
+      --gold-soft: #FFF7DF;
+      --ink: #0F172A;
+      --slate: #4E5A6B;
+      --cream: #FFF9F5;
+      --card: #FFFEFC;
+      color-scheme: light;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { -webkit-text-size-adjust: 100%; }
+
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(ellipse at 4% 8%, rgba(240, 118, 102, .14), transparent 26rem),
+        radial-gradient(ellipse at 96% 90%, rgba(112, 176, 166, .16), transparent 30rem),
+        var(--cream);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      -webkit-tap-highlight-color: transparent;
+      min-height: 100vh;
+    }
+
+    a { color: var(--coral-deep); }
+
+    .wrap {
+      width: 100%;
+      max-width: 820px;
+      margin: 0 auto;
+      padding: clamp(18px, 4vw, 48px) clamp(18px, 4vw, 40px) clamp(48px, 8vh, 80px);
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding-bottom: clamp(20px, 4vh, 36px);
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      border-radius: 12px;
+      text-decoration: none;
+    }
+
+    .brand img {
+      height: clamp(32px, 4vh, 44px);
+      width: auto;
+      filter: drop-shadow(0 6px 12px rgba(75, 45, 39, .1));
+    }
+
+    .back {
+      font-size: .85rem;
+      font-weight: 600;
+      text-decoration: none;
+      color: var(--slate);
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, .8);
+      border: 1px solid rgba(255, 255, 255, .95);
+      box-shadow: 0 6px 18px rgba(75, 45, 39, .08);
+      transition: color .2s ease, background-color .2s ease;
+    }
+
+    .back:hover { color: var(--coral-deep); background: #fff; }
+
+    .card {
+      background: var(--card);
+      border-radius: 22px;
+      padding: clamp(22px, 3.4vw, 44px);
+      box-shadow: 0 20px 60px rgba(75, 45, 39, .1);
+      border: 1px solid rgba(255, 255, 255, .9);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      margin: 0 0 14px;
+      padding: 7px 14px;
+      border-radius: 999px;
+      background: var(--mint-soft);
+      border: 1px solid rgba(112, 176, 166, .3);
+      color: #34766D;
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .09em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--mint);
+      box-shadow: 0 0 0 4px rgba(112, 176, 166, .18);
+    }
+
+    h1 {
+      margin: 0 0 12px;
+      font-size: clamp(1.75rem, 3.6vw, 2.4rem);
+      line-height: 1.15;
+      letter-spacing: -.03em;
+      font-weight: 800;
+    }
+
+    h1 span { color: var(--coral-deep); }
+
+    .lead {
+      margin: 0 0 26px;
+      color: var(--slate);
+      font-size: 1.02rem;
+      font-weight: 500;
+    }
+
+    h2 {
+      margin: 32px 0 10px;
+      font-size: 1.15rem;
+      letter-spacing: -.01em;
+    }
+
+    h3 {
+      margin: 22px 0 6px;
+      font-size: 1rem;
+      letter-spacing: -.005em;
+    }
+
+    p { margin: 0 0 12px; color: var(--slate); }
+
+    ul, ol {
+      margin: 0 0 14px;
+      padding-left: 22px;
+      color: var(--slate);
+    }
+
+    li { margin-bottom: 6px; }
+
+    strong { color: var(--ink); }
+
+    .callout {
+      margin: 20px 0;
+      padding: 16px 18px;
+      border-radius: 14px;
+      background: var(--gold-soft);
+      border: 1px solid rgba(233, 188, 86, .35);
+      color: #6b5416;
+      font-size: .92rem;
+    }
+
+    .callout strong { color: #4a3a0a; }
+
+    .btn-mail {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 6px;
+      padding: 12px 22px;
+      border-radius: 14px;
+      background: var(--coral-deep);
+      color: #fff;
+      font-weight: 700;
+      text-decoration: none;
+      box-shadow: 0 12px 26px rgba(217, 84, 74, .28);
+      transition: transform .2s ease, box-shadow .2s ease, background-color .2s ease;
+    }
+
+    .btn-mail:hover {
+      background: #c94a41;
+      transform: translateY(-2px);
+      box-shadow: 0 16px 30px rgba(217, 84, 74, .34);
+    }
+
+    .btn-mail svg { width: 18px; height: 18px; }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 10px 0 18px;
+      font-size: .92rem;
+    }
+
+    th, td {
+      text-align: left;
+      padding: 10px 12px;
+      border-bottom: 1px solid rgba(78, 90, 107, .14);
+      color: var(--slate);
+      vertical-align: top;
+    }
+
+    th {
+      color: var(--ink);
+      font-weight: 700;
+      background: rgba(229, 244, 241, .5);
+    }
+
+    .footer-note {
+      margin-top: 30px;
+      padding-top: 18px;
+      border-top: 1px dashed rgba(78, 90, 107, .25);
+      font-size: .82rem;
+      color: rgba(78, 90, 107, .7);
+      text-align: center;
+    }
+
+    .footer-note a { color: var(--coral-deep); }
+  </style>
+</head>
+
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TVZ5B4GS" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <div class="wrap">
+    <header class="topbar">
+      <a class="brand" href="index.html" aria-label="UniHome, inicio">
+        <img src="assets/logo.png" alt="UniHome" width="520" height="149">
+      </a>
+      <a class="back" href="index.html">← Volver al inicio</a>
+    </header>
+
+    <main class="card">
+      <p class="eyebrow">Privacidad y control</p>
+      <h1>Eliminar mi cuenta <span>de UniHome</span></h1>
+      <p class="lead">
+        En UniHome respetamos tu decisión. Desde esta página puedes solicitar la eliminación de tu cuenta y de los
+        datos personales asociados, incluso si ya desinstalaste la aplicación.
+      </p>
+
+      <div class="callout">
+        <strong>Importante:</strong> este procedimiento aplica a las cuentas creadas en la aplicación móvil de
+        UniHome para Android. Una vez eliminada, la cuenta <strong>no puede recuperarse</strong>.
+      </div>
+
+      <h2>1. Cómo solicitar la eliminación</h2>
+      <p>
+        Envía un correo electrónico desde la dirección con la que te registraste a
+        <a href="mailto:unihome0412@gmail.com">unihome0412@gmail.com</a>
+        con el asunto <strong>“Eliminación de cuenta UniHome”</strong>, indicando:
+      </p>
+      <ul>
+        <li>Nombre completo registrado en la aplicación.</li>
+        <li>Correo electrónico asociado a tu cuenta.</li>
+        <li>Motivo de la eliminación (opcional).</li>
+      </ul>
+      <p>También puedes hacer clic directo aquí:</p>
+      <a class="btn-mail"
+        href="mailto:unihome0412@gmail.com?subject=Eliminaci%C3%B3n%20de%20cuenta%20UniHome&body=Hola%2C%20solicito%20la%20eliminaci%C3%B3n%20de%20mi%20cuenta%20de%20UniHome.%0A%0ANombre%20completo%3A%20%0ACorreo%20registrado%3A%20%0A%0AGracias.">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+          stroke-linejoin="round" aria-hidden="true">
+          <rect x="2.5" y="4.5" width="19" height="15" rx="2.5"></rect>
+          <path d="M3 6l9 7 9-7"></path>
+        </svg>
+        Solicitar eliminación por correo
+      </a>
+
+      <h2>2. Datos que se eliminan</h2>
+      <p>Al procesar tu solicitud, eliminaremos de forma permanente:</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Tipo de dato</th>
+            <th>Acción</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Datos de identificación (nombre, correo electrónico, foto de perfil)</td>
+            <td>Eliminados</td>
+          </tr>
+          <tr>
+            <td>Preferencias de búsqueda y favoritos de alojamiento</td>
+            <td>Eliminados</td>
+          </tr>
+          <tr>
+            <td>Historial de conversaciones con arrendadores</td>
+            <td>Eliminados</td>
+          </tr>
+          <tr>
+            <td>Datos técnicos de uso vinculados a tu cuenta</td>
+            <td>Anonimizados</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>3. Datos que podemos conservar</h2>
+      <p>
+        Por obligación legal o para resolver disputas, algunos datos pueden conservarse bloqueados por un plazo
+        determinado:
+      </p>
+      <ul>
+        <li>Registros de transacciones (si hubo pagos), por hasta 5 años, conforme a obligaciones fiscales.</li>
+        <li>Datos necesarios para atender reclamaciones legales o requerimientos de autoridad.</li>
+      </ul>
+      <p>
+        Estos datos se conservan <strong>bloqueados</strong>, es decir, no se utilizan para ninguna otra finalidad y
+        solo se conservan durante el plazo legal aplicable. Una vez cumplido, se eliminan definitivamente.
+      </p>
+
+      <h2>4. Tiempo de procesamiento</h2>
+      <p>
+        Confirmaremos la recepción de tu solicitud dentro de <strong>5 días hábiles</strong> y la eliminación efectiva
+        se realizará dentro de los <strong>30 días hábiles</strong> siguientes.
+      </p>
+
+      <h2>5. Derechos ARCO</h2>
+      <p>
+        Si además deseas ejercer tus derechos de Acceso, Rectificación, Cancelación u Oposición sobre otros datos,
+        puedes escribir al mismo correo
+        <a href="mailto:unihome0412@gmail.com">unihome0412@gmail.com</a>, indicando claramente el derecho que deseas
+        ejercer y adjuntando identificación oficial.
+      </p>
+
+      <h2>6. Contacto</h2>
+      <p>
+        Para dudas relacionadas con este procedimiento escríbenos a
+        <a href="mailto:unihome0412@gmail.com">unihome0412@gmail.com</a>.
+        Consulta también nuestro
+        <a href="index.html">Aviso de privacidad</a>.
+      </p>
+
+      <p class="footer-note">
+        © <span id="year"></span> UniHome · Este procedimiento cumple con la política de Google Play sobre eliminación
+        de cuentas y datos.
+      </p>
+    </main>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Tracking de vista de página para GTM / GA4
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({ event: "delete_account_view" });
+
+    // Tracking cuando hacen clic en "Solicitar eliminación por correo"
+    document.querySelectorAll('a[href^="mailto:"]').forEach(function (el) {
+      el.addEventListener("click", function () {
+        window.dataLayer.push({ event: "delete_account_request" });
+      });
+    });
+  </script>
+</body>
+
+</html>

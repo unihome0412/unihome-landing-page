@@ -1,0 +1,1030 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>UniHome · Lejos de casa, cerca de sentirte en casa</title>
+  <meta name="description"
+    content="Encuentra un espacio seguro, cómodo y cerca de tu universidad. Tu próximo hogar está más cerca de lo que imaginas. Descarga UniHome en Google Play.">
+  <meta name="theme-color" content="#FFF9F5">
+  <link rel="icon" href="assets/favicon.png">
+  <link rel="preload" as="image" href="assets/Bienvenida%20a%20su%20nuevo%20hogar.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-TVZ5B4GS');</script>
+  <!-- End Google Tag Manager -->
+
+  <style>
+    :root {
+      --coral: #F07666;
+      --coral-deep: #D9544A;
+      --coral-soft: #FFF0ED;
+      --mint: #70B0A6;
+      --mint-soft: #E5F4F1;
+      --gold: #E9BC56;
+      --gold-soft: #FFF7DF;
+      --ink: #0F172A;
+      --slate: #4E5A6B;
+      --cream: #FFF9F5;
+      --card: #FFFEFC;
+      --shadow: 0 18px 50px rgba(75, 45, 39, .16);
+      color-scheme: light;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      height: 100%;
+    }
+
+    html {
+      overflow: hidden;
+      background: var(--cream);
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      margin: 0;
+      overflow: hidden;
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      color: var(--ink);
+      background: var(--cream);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    img,
+    svg {
+      display: block;
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    .skip {
+      position: fixed;
+      left: -999px;
+      top: 10px;
+      z-index: 30;
+      padding: 10px 16px;
+      border-radius: 10px;
+      background: var(--ink);
+      color: #fff;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .skip:focus {
+      left: 10px;
+    }
+
+    :focus-visible {
+      outline: 3px solid var(--mint);
+      outline-offset: 3px;
+    }
+
+    .page {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      height: 100dvh;
+      overflow: hidden;
+      background:
+        radial-gradient(ellipse at 4% 8%, rgba(240, 118, 102, .17), transparent 29rem),
+        radial-gradient(ellipse at 96% 62%, rgba(112, 176, 166, .18), transparent 32rem),
+        radial-gradient(ellipse at 16% 96%, rgba(233, 188, 86, .13), transparent 26rem),
+        #FFF9F5;
+      isolation: isolate;
+    }
+
+    .page::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      background:
+        radial-gradient(circle at 78% 16%, rgba(255, 255, 255, .58) 0 3px, transparent 4px) 0 0 / 30px 30px,
+        radial-gradient(circle at 14% 72%, rgba(255, 255, 255, .5) 0 3px, transparent 4px) 0 0 / 34px 34px;
+      opacity: .5;
+      mask-image: linear-gradient(90deg, transparent 0%, #000 30%, #000 70%, transparent 100%);
+      -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 30%, #000 70%, transparent 100%);
+    }
+
+    .shell {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      max-width: 1240px;
+      margin: 0 auto;
+      padding-inline: clamp(18px, 4vw, 56px);
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding-block: clamp(16px, 3.2vh, 28px);
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      border-radius: 12px;
+    }
+
+    .brand img {
+      width: auto;
+      height: clamp(34px, 4.2vh, 48px);
+      filter: drop-shadow(0 6px 12px rgba(75, 45, 39, .1));
+    }
+
+    .socials {
+      display: flex;
+      align-items: center;
+      gap: clamp(8px, 1vw, 12px);
+    }
+
+    .socials a {
+      display: grid;
+      place-items: center;
+      width: clamp(38px, 5.2vh, 46px);
+      height: clamp(38px, 5.2vh, 46px);
+      border-radius: 999px;
+      color: var(--coral-deep);
+      background: rgba(255, 254, 252, .82);
+      border: 1px solid rgba(255, 255, 255, .95);
+      box-shadow: 0 10px 24px rgba(75, 45, 39, .12);
+      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px);
+      text-decoration: none;
+      transition: transform .2s ease, background-color .2s ease, color .2s ease, box-shadow .2s ease;
+    }
+
+    .socials a:hover {
+      color: #fff;
+      background: var(--coral-deep);
+      transform: translateY(-3px);
+      box-shadow: 0 14px 28px rgba(217, 84, 74, .28);
+    }
+
+    .socials svg {
+      width: clamp(17px, 2.3vh, 21px);
+      height: clamp(17px, 2.3vh, 21px);
+    }
+
+    .hero-main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      min-height: 0;
+      padding-bottom: clamp(24px, 5vh, 58px);
+    }
+
+    .content {
+      width: 100%;
+      max-width: 590px;
+      min-width: 0;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      margin: 0 0 clamp(12px, 2.1vh, 20px);
+      padding: 8px 15px;
+      border-radius: 999px;
+      background: rgba(229, 244, 241, .92);
+      border: 1px solid rgba(112, 176, 166, .3);
+      color: #34766D;
+      font-size: clamp(.66rem, .84vw, .76rem);
+      font-weight: 700;
+      letter-spacing: .09em;
+      text-transform: uppercase;
+      box-shadow: 0 6px 16px rgba(112, 176, 166, .12);
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--mint);
+      box-shadow: 0 0 0 4px rgba(112, 176, 166, .18);
+    }
+
+    h1 {
+      margin: 0 0 clamp(12px, 2.1vh, 20px);
+      max-width: 600px;
+      font-size: clamp(2.3rem, 5vw, 4.15rem);
+      line-height: 1.04;
+      letter-spacing: -.052em;
+      font-weight: 800;
+      text-wrap: balance;
+    }
+
+    h1 span {
+      color: var(--coral-deep);
+    }
+
+    .lead {
+      max-width: 46ch;
+      margin: 0 0 clamp(20px, 3.4vh, 30px);
+      color: var(--slate);
+      font-size: clamp(.98rem, 1.15vw, 1.12rem);
+      font-weight: 500;
+      line-height: 1.7;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .btn-playstore {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      padding: clamp(11px, 1.7vh, 15px) clamp(20px, 2.4vw, 28px);
+      border-radius: 16px;
+      background: #0F172A;
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, .16);
+      text-decoration: none;
+      box-shadow: 0 14px 32px rgba(15, 23, 42, .26);
+      transition: transform .2s ease, background-color .2s ease, box-shadow .2s ease;
+    }
+
+    .btn-playstore:hover {
+      background: #1E293B;
+      transform: translateY(-2px);
+      box-shadow: 0 18px 38px rgba(15, 23, 42, .32);
+    }
+
+    .play-icon {
+      flex-shrink: 0;
+      width: clamp(24px, 3.4vh, 30px);
+      height: clamp(24px, 3.4vh, 30px);
+    }
+
+    .play-text {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      line-height: 1.15;
+    }
+
+    .play-subtitle {
+      color: #94A3B8;
+      font-size: clamp(.6rem, .12vw + .5rem, .68rem);
+      font-weight: 600;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    .play-title {
+      font-size: clamp(1rem, 1.3vw, 1.18rem);
+      font-weight: 700;
+      letter-spacing: -.01em;
+      white-space: nowrap;
+    }
+
+    .note {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin: clamp(14px, 2.2vh, 20px) 0 0;
+      color: var(--slate);
+      font-size: clamp(.78rem, .9vw, .86rem);
+      font-weight: 500;
+    }
+
+    .note::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--mint);
+      box-shadow: 0 0 0 4px rgba(112, 176, 166, .16);
+    }
+
+    .visual {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      overflow: hidden;
+    }
+
+    .visual::before,
+    .visual::after {
+      display: none;
+    }
+
+    .visual img {
+      width: 100%;
+      height: 100%;
+      max-width: none;
+      max-height: none;
+      object-fit: contain;
+      object-position: right center;
+    }
+
+    .scrim {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+      background:
+        linear-gradient(90deg,
+          rgba(255, 249, 245, .985) 0%,
+          rgba(255, 249, 245, .96) 28%,
+          rgba(255, 249, 245, .86) 42%,
+          rgba(255, 249, 245, .54) 56%,
+          rgba(255, 249, 245, .14) 74%,
+          rgba(255, 249, 245, 0) 90%),
+        linear-gradient(0deg, rgba(255, 249, 245, .4), rgba(255, 249, 245, 0) 32%),
+        radial-gradient(60% 50% at 82% 20%, rgba(255, 247, 223, .14), transparent 70%);
+    }
+
+    .content>* {
+      animation: rise .75s cubic-bezier(.22, .8, .3, 1) both;
+    }
+
+    .content> :nth-child(2) {
+      animation-delay: .08s;
+    }
+
+    .content> :nth-child(3) {
+      animation-delay: .16s;
+    }
+
+    .content> :nth-child(4) {
+      animation-delay: .24s;
+    }
+
+    .content> :nth-child(5) {
+      animation-delay: .32s;
+    }
+
+    .visual {
+      animation: fadeIn 1.1s ease both;
+    }
+
+    @keyframes rise {
+      from {
+        opacity: 0;
+        transform: translateY(18px);
+      }
+
+      to {
+        opacity: 1;
+        transform: none;
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    @media (max-width: 860px) {
+      .page::before {
+        mask-image: none;
+        -webkit-mask-image: none;
+        opacity: .38;
+      }
+
+      .topbar {
+        padding-block: clamp(13px, 2.2vh, 20px);
+      }
+
+      .brand img {
+        height: clamp(30px, 6.6vw, 40px);
+      }
+
+      .socials a {
+        width: clamp(34px, 9vw, 42px);
+        height: clamp(34px, 9vw, 42px);
+      }
+
+      .socials svg {
+        width: clamp(16px, 4.4vw, 19px);
+        height: clamp(16px, 4.4vw, 19px);
+      }
+
+      h1 {
+        font-size: clamp(2rem, 8.6vw, 2.95rem);
+      }
+
+      .lead {
+        max-width: 43ch;
+        font-size: clamp(.94rem, 3.9vw, 1.04rem);
+        line-height: 1.6;
+      }
+
+      .play-title {
+        font-size: clamp(.95rem, 4vw, 1.08rem);
+      }
+    }
+
+    @media (max-width: 860px) and (orientation: portrait) {
+      .scrim {
+        display: none;
+      }
+
+      .visual {
+        position: relative;
+        inset: auto;
+        z-index: 1;
+        flex: 0 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: auto;
+        height: clamp(170px, 34vh, 320px);
+        margin: 0 clamp(18px, 4vw, 56px);
+        overflow: visible;
+      }
+
+      .visual::before {
+        content: "";
+        display: block;
+        position: absolute;
+        z-index: 0;
+        inset: 2% 3% 2% 3%;
+        border-radius: 45% 55% 61% 39% / 47% 41% 59% 53%;
+        background: linear-gradient(145deg, rgba(229, 244, 241, .98) 0%, rgba(255, 247, 223, .82) 58%, rgba(240, 118, 102, .12) 100%);
+        transform: rotate(-3deg);
+        box-shadow: 0 26px 60px rgba(112, 176, 166, .12);
+      }
+
+      .visual::after {
+        content: "";
+        display: block;
+        position: absolute;
+        z-index: 0;
+        right: 3%;
+        bottom: -2%;
+        width: clamp(46px, 11vw, 72px);
+        aspect-ratio: 1;
+        border-radius: 35% 65% 55% 45%;
+        background: linear-gradient(145deg, #FFF7DF, #F1D583);
+        box-shadow: 0 16px 30px rgba(233, 188, 86, .22);
+        transform: rotate(16deg);
+      }
+
+      .visual img {
+        position: relative;
+        z-index: 1;
+        width: auto;
+        height: auto;
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+        border-radius: clamp(20px, 2.4vw, 32px);
+        border: clamp(5px, .55vw, 8px) solid rgba(255, 255, 255, .94);
+        box-shadow: 0 30px 76px rgba(75, 45, 39, .2), 0 9px 26px rgba(217, 84, 74, .1);
+      }
+
+      .hero-main {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: stretch;
+        gap: clamp(14px, 2.4vh, 22px);
+        padding-bottom: clamp(18px, 3.4vh, 32px);
+      }
+
+      .content {
+        max-width: 34rem;
+        margin-inline: auto;
+      }
+    }
+
+    @media (max-width: 420px) {
+      h1 {
+        letter-spacing: -.046em;
+      }
+
+      .eyebrow {
+        letter-spacing: .07em;
+        padding: 7px 12px;
+      }
+
+      .btn-playstore {
+        border-radius: 14px;
+      }
+    }
+
+    @media (max-height: 700px) {
+      .eyebrow {
+        margin-bottom: 10px;
+        padding: 6px 12px;
+      }
+
+      h1 {
+        margin-bottom: 10px;
+      }
+
+      .lead {
+        margin-bottom: 14px;
+        line-height: 1.52;
+      }
+
+      .note {
+        margin-top: 12px;
+      }
+    }
+
+    @media (max-height: 640px) and (orientation: portrait) {
+      .visual {
+        height: clamp(130px, 29vh, 190px);
+      }
+
+      .eyebrow {
+        display: none;
+      }
+
+      h1 {
+        font-size: clamp(1.72rem, 8vw, 2.3rem);
+      }
+
+      .lead {
+        font-size: clamp(.88rem, 3.6vw, .96rem);
+        margin-bottom: 12px;
+      }
+
+      .note {
+        display: none;
+      }
+
+      .btn-playstore {
+        padding: 9px 18px;
+      }
+
+      .play-icon {
+        width: 22px;
+        height: 22px;
+      }
+    }
+
+    @media (max-height: 500px) and (orientation: landscape) {
+      .scrim {
+        background:
+          linear-gradient(90deg,
+            rgba(255, 249, 245, .99) 0%,
+            rgba(255, 249, 245, .96) 34%,
+            rgba(255, 249, 245, .8) 48%,
+            rgba(255, 249, 245, .36) 64%,
+            rgba(255, 249, 245, .05) 84%,
+            rgba(255, 249, 245, 0) 94%),
+          linear-gradient(0deg, rgba(255, 249, 245, .35), rgba(255, 249, 245, 0) 40%);
+      }
+
+      .hero-main {
+        padding-bottom: 10px;
+      }
+
+      .topbar {
+        padding-block: 10px;
+      }
+
+      .brand img {
+        height: 28px;
+      }
+
+      .socials a {
+        width: 32px;
+        height: 32px;
+      }
+
+      .socials svg {
+        width: 15px;
+        height: 15px;
+      }
+
+      .content {
+        max-width: min(500px, 58vw);
+      }
+
+      .eyebrow,
+      .note {
+        display: none;
+      }
+
+      h1 {
+        margin-bottom: 8px;
+        font-size: clamp(1.7rem, 4.2vw, 2.5rem);
+      }
+
+      .lead {
+        margin-bottom: 12px;
+        font-size: clamp(.8rem, 1.6vw, .94rem);
+        line-height: 1.45;
+      }
+
+      .btn-playstore {
+        padding: 8px 16px;
+        gap: 10px;
+        border-radius: 12px;
+      }
+
+      .play-icon {
+        width: 22px;
+        height: 22px;
+      }
+
+      .play-subtitle {
+        font-size: .54rem;
+      }
+
+      .play-title {
+        font-size: .92rem;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+
+    /* ===== Aviso de privacidad (discreto) ===== */
+    .legal-bar {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 5;
+      display: flex;
+      justify-content: center;
+      padding: 6px clamp(14px, 4vw, 56px) 10px;
+      pointer-events: none;
+    }
+
+    .legal-bar a {
+      pointer-events: auto;
+      color: rgba(78, 90, 107, .55);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: .02em;
+      text-decoration: none;
+      border-bottom: 1px dotted rgba(78, 90, 107, .35);
+      padding-bottom: 1px;
+      transition: color .2s ease, border-color .2s ease;
+    }
+
+    .legal-bar a:hover,
+    .legal-bar a:focus-visible {
+      color: var(--coral-deep);
+      border-bottom-color: var(--coral-deep);
+    }
+
+    .legal-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: clamp(14px, 3vw, 32px);
+      background: rgba(15, 23, 42, .55);
+      -webkit-backdrop-filter: blur(6px);
+      backdrop-filter: blur(6px);
+    }
+
+    .legal-modal.is-open {
+      display: flex;
+      animation: fadeIn .2s ease both;
+    }
+
+    .legal-card {
+      position: relative;
+      width: 100%;
+      max-width: 640px;
+      max-height: min(86vh, 780px);
+      overflow-y: auto;
+      padding: clamp(22px, 3vw, 34px) clamp(20px, 3vw, 34px);
+      border-radius: 20px;
+      background: var(--card);
+      color: var(--ink);
+      box-shadow: 0 30px 80px rgba(15, 23, 42, .35);
+      font-size: .92rem;
+      line-height: 1.65;
+    }
+
+    .legal-card h2 {
+      margin: 0 0 6px;
+      font-size: clamp(1.25rem, 2.4vw, 1.5rem);
+      letter-spacing: -.02em;
+    }
+
+    .legal-card h3 {
+      margin: 20px 0 6px;
+      font-size: 1rem;
+      letter-spacing: -.01em;
+    }
+
+    .legal-card p {
+      margin: 0 0 10px;
+      color: var(--slate);
+    }
+
+    .legal-card ul {
+      margin: 0 0 10px;
+      padding-left: 20px;
+      color: var(--slate);
+    }
+
+    .legal-card li {
+      margin-bottom: 4px;
+    }
+
+    .legal-card a {
+      color: var(--coral-deep);
+    }
+
+    .legal-close {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      display: grid;
+      place-items: center;
+      width: 36px;
+      height: 36px;
+      border: 0;
+      border-radius: 50%;
+      background: rgba(15, 23, 42, .06);
+      color: var(--ink);
+      cursor: pointer;
+      font-size: 18px;
+      line-height: 1;
+      transition: background-color .2s ease, transform .2s ease;
+    }
+
+    .legal-close:hover {
+      background: rgba(217, 84, 74, .14);
+      transform: rotate(90deg);
+    }
+
+    body.legal-open {
+      overflow: hidden;
+    }
+
+    @media (max-height: 640px) and (orientation: portrait) {
+      .legal-bar {
+        padding-bottom: 6px;
+      }
+
+      .legal-bar a {
+        font-size: 10px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TVZ5B4GS"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <a class="skip" href="#contenido">Saltar al contenido</a>
+
+  <div class="page">
+    <header class="shell topbar">
+      <a class="brand" href="#" aria-label="UniHome, inicio">
+        <img src="assets/logo.png" alt="UniHome" width="520" height="149">
+      </a>
+
+      <nav class="socials" aria-label="Redes sociales de UniHome">
+        <a href="#" data-link="instagram" aria-label="Instagram de UniHome">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round" aria-hidden="true">
+            <rect x="2.5" y="2.5" width="19" height="19" rx="5.5"></rect>
+            <circle cx="12" cy="12" r="4.2"></circle>
+            <circle cx="17.4" cy="6.6" r="1.15" fill="currentColor" stroke="none"></circle>
+          </svg>
+        </a>
+        <a href="#" data-link="facebook" aria-label="Facebook de UniHome">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path
+              d="M13.6 22v-8.1h2.72l.41-3.16H13.6V8.72c0-.91.25-1.53 1.56-1.53h1.67V4.36c-.29-.04-1.28-.12-2.44-.12-2.41 0-4.06 1.47-4.06 4.17v2.33H7.6v3.16h2.73V22h3.27z">
+            </path>
+          </svg>
+        </a>
+        <a href="#" data-link="youtube" aria-label="YouTube de UniHome">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path
+              d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31.4 31.4 0 0 0 0 12a31.4 31.4 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31.4 31.4 0 0 0 24 12a31.4 31.4 0 0 0-.5-5.8zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z" />
+          </svg>
+        </a>
+      </nav>
+    </header>
+
+    <figure class="visual">
+      <img src="assets/Bienvenida%20a%20su%20nuevo%20hogar.jpg" width="1536" height="1024"
+        alt="Ilustración de una estudiante con su maleta llegando a su nuevo hogar, donde sus vecinas la saludan desde el balcón de una casa llena de flores, con una universidad al fondo.">
+    </figure>
+    <div class="scrim" aria-hidden="true"></div>
+
+    <main class="shell hero-main" id="contenido">
+      <div class="content">
+        <p class="eyebrow">Cerca del campus. Cerca de ti.</p>
+        <h1>Lejos de casa, <span>cerca de sentirte en casa.</span></h1>
+        <p class="lead">Encuentra un espacio seguro, cómodo y cerca de tu universidad. Tu próximo hogar está más cerca
+          de
+          lo que imaginas.</p>
+        <div class="actions">
+          <a class="btn-playstore" href="#" data-link="googlePlay" aria-label="Descargar UniHome en Google Play">
+            <svg class="play-icon" viewBox="0 0 512 512" aria-hidden="true">
+              <path fill="#415A6C"
+                d="M325.8 238.7L76.6 30.6C65.5 21.2 50 24.3 50 39.8v432.4c0 15.5 15.5 18.6 26.6 9.2l249.2-208.1c4.5-3.8 4.5-30.8 0-34.6z">
+              </path>
+              <path fill="#47BDFF" d="M76.6 30.6l249.2 208.1-70.1 58.5L50 125.7V39.8c0-15.5 15.5-18.6 26.6-9.2z">
+              </path>
+              <path fill="#00E676" d="M76.6 481.4c-11.1 9.4-26.6 6.3-26.6-9.2V386.3l205.7-171.5 70.1 58.5-249.2 208.1z">
+              </path>
+              <path fill="#FFD600" d="M462 238.7l-79.6-66.5-56.6 47.3 56.6 47.3 79.6-66.5c10.3-8.6 10.3-17.7 0-21.6z">
+              </path>
+              <path fill="#FF3D00" d="M382.4 172.2L325.8 219.5 76.6 30.6c7.7-6.5 18.2-7 26.8-1.7l279 143.3z"></path>
+            </svg>
+            <span class="play-text">
+              <span class="play-subtitle">Descargar en</span>
+              <span class="play-title">Google Play</span>
+            </span>
+          </a>
+        </div>
+        <p class="note">Gratis · Disponible para Android</p>
+      </div>
+    </main>
+
+    <!-- Enlace discreto al aviso de privacidad -->
+    <div class="legal-bar">
+      <a href="#" id="openPrivacy">Aviso de privacidad</a>
+    </div>
+  </div><!-- /.page -->
+
+  <!-- Modal del aviso de privacidad -->
+  <div class="legal-modal" id="privacyModal" role="dialog" aria-modal="true" aria-labelledby="privacyTitle"
+    aria-hidden="true">
+    <div class="legal-card" role="document">
+      <button class="legal-close" type="button" aria-label="Cerrar aviso de privacidad" id="closePrivacy">✕</button>
+
+      <h2 id="privacyTitle">Aviso de privacidad</h2>
+      <p><strong>UniHome</strong> (en adelante, "UniHome") con domicilio en México, es responsable del tratamiento de
+        sus datos personales conforme a la Ley Federal de Protección de Datos Personales en Posesión de los
+        Particulares (LFPDPPP).</p>
+
+      <h3>1. Datos que recabamos</h3>
+      <ul>
+        <li>Datos de identificación (nombre, correo electrónico).</li>
+        <li>Datos de contacto y preferencias de búsqueda de alojamiento.</li>
+        <li>Datos técnicos de navegación (IP, dispositivo, páginas visitadas).</li>
+      </ul>
+
+      <h3>2. Finalidades del tratamiento</h3>
+      <ul>
+        <li>Brindar el servicio de búsqueda y contacto de alojamiento estudiantil.</li>
+        <li>Enviar información relacionada con el servicio.</li>
+        <li>Analítica y mejora del sitio mediante herramientas como Google Analytics / Tag Manager.</li>
+      </ul>
+
+      <h3>3. Transferencia de datos</h3>
+      <p>Sus datos no serán transferidos a terceros sin su consentimiento, salvo las excepciones previstas en el
+        artículo 37 de la LFPDPPP.</p>
+
+      <h3>4. Derechos ARCO</h3>
+      <p>Usted puede ejercer sus derechos de Acceso, Rectificación, Cancelación y Oposición enviando un correo a
+        <a href="mailto:unihome0412@gmail.com">unihome0412@gmail.com</a>.</p>
+
+      <h3>5. Cookies y tecnologías de rastreo</h3>
+      <p>Este sitio utiliza cookies y Google Tag Manager para fines analíticos. Puede deshabilitarlas desde la
+        configuración de su navegador.</p>
+
+      <h3>6. Cambios al aviso</h3>
+      <p>Cualquier modificación a este aviso será publicada en esta misma sección. Última actualización:
+        <span id="privacyDate"></span>.</p>
+    </div>
+  </div>
+
+  <script>
+    const LINKS = {
+      googlePlay: "https://play.google.com/",
+      instagram: "https://www.instagram.com/unihome0412/",
+      facebook: "https://www.facebook.com/people/Unihome/61596543299731/",
+      youtube: "https://www.youtube.com/@UniHome-p4k"
+    };
+
+    document.querySelectorAll("[data-link]").forEach(function (element) {
+      const url = LINKS[element.dataset.link];
+
+      if (url) {
+        element.href = url;
+        element.target = "_blank";
+        element.rel = "noopener noreferrer";
+      } else {
+        element.removeAttribute("href");
+        element.setAttribute("aria-disabled", "true");
+        element.style.cursor = "default";
+      }
+
+      // Tracking para GTM / GA4
+      element.addEventListener("click", function () {
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+          event: "social_click",
+          link_type: element.dataset.link,
+          link_url: element.href || ""
+        });
+      });
+    });
+
+    // ===== Aviso de privacidad (modal) =====
+    (function () {
+      const modal = document.getElementById("privacyModal");
+      const openBtn = document.getElementById("openPrivacy");
+      const closeBtn = document.getElementById("closePrivacy");
+      const dateEl = document.getElementById("privacyDate");
+      let lastFocused = null;
+
+      if (dateEl) {
+        dateEl.textContent = new Date().toLocaleDateString("es-MX", {
+          year: "numeric", month: "long", day: "numeric"
+        });
+      }
+
+      function openModal(e) {
+        if (e) e.preventDefault();
+        lastFocused = document.activeElement;
+        modal.classList.add("is-open");
+        modal.setAttribute("aria-hidden", "false");
+        document.body.classList.add("legal-open");
+        closeBtn.focus();
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({ event: "privacy_open" });
+      }
+
+      function closeModal() {
+        modal.classList.remove("is-open");
+        modal.setAttribute("aria-hidden", "true");
+        document.body.classList.remove("legal-open");
+        if (lastFocused) lastFocused.focus();
+      }
+
+      openBtn.addEventListener("click", openModal);
+      closeBtn.addEventListener("click", closeModal);
+
+      modal.addEventListener("click", function (e) {
+        if (e.target === modal) closeModal();
+      });
+
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape" && modal.classList.contains("is-open")) {
+          closeModal();
+        }
+      });
+    })();
+  </script>
+</body>
+
+</html>
